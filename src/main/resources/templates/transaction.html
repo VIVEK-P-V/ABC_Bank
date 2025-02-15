@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Transaction</title>
+    <link rel="stylesheet" href="/style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Get Transaction</h1>
+        <!-- Card for the form -->
+        <div class="card">
+            <div class="card-header">
+                <h2>Search Transaction</h2>
+                <div class="header-decoration"></div>
+            </div>
+            <div class="card-body">
+                <!-- Form to get transaction -->
+                <form th:action="@{/accounts/transaction}" method="post">
+                    <div class="form-group">
+                        <label for="accountnumber">Account Number</label>
+                        <input type="text" id="accountNumber" name="accountNumber" placeholder="Enter Account Number" required class="modern-input">
+                        <span class="input-border"></span>
+                    </div>
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-create">
+                        Search
+                        <div class="hover-effect"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

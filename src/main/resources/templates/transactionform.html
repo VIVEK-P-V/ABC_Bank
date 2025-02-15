@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transaction Details</title>
+<link rel="stylesheet" href="/style1.css">
+<!-- Link to your CSS file -->
+</head>
+<body>
+	<div class="background-wrapper">
+		<div class="floating-circle circle-1"></div>
+		<div class="floating-circle circle-2"></div>
+		<div class="floating-circle circle-3"></div>
+	</div>
+	<div class="container">
+		<div class="glass-card">
+			<div class="card-header">
+				<h2>Transaction History</h2>
+				<div class="header-decoration"></div>
+			</div>
+			<div class="card-body">
+				<table class="transaction-table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Type</th>
+							<th>Amount</th>
+							<th>TimeStamp</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="t : ${transaction}">
+							<td th:text="${t.id}"></td>
+							<td th:text="${t.type}"></td>
+							<td th:text="${t.amount}"></td>
+							<td th:text="${t.timestamp}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.0/scrollreveal.min.js"></script>
+	<script>
+		ScrollReveal().reveal('.glass-card', {
+			delay : 200,
+			origin : 'top',
+			distance : '50px'
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Amount</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="/style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Container for the deposit form -->
+    <div class="container">
+        <h1>Deposit Funds</h1>
+
+        <!-- Card for the form -->
+        <div class="card">
+            <div class="card-header">
+                <h2>Deposit to  Account</h2>
+                <div class="header-decoration"></div>
+            </div>
+            <div class="card-body">
+                <!-- Form to deposit funds -->
+                <form th:action="@{/accounts/deposit}" method="post">
+                    <div class="form-group">
+                        <label for="accountnumber">Account Number</label>
+                        <input type="text" id="accountnumber" name="accountNumber" required class="modern-input">
+                        <span class="input-border"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Deposit Amount</label>
+                        <input type="number" id="amount" name="amount" required class="modern-input">
+                        <span class="input-border"></span>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-create">
+                        Deposit Now
+                        <div class="hover-effect"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

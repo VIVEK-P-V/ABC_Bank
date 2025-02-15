@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - ABC  Bank</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="background-wrapper">
+        <div class="floating-circle circle-1"></div>
+        <div class="floating-circle circle-2"></div>
+        <div class="floating-circle circle-3"></div>
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="welcome-message">
+        <h1>Welcome to <span> ABC Bank</span></h1>
+        <p>Start your financial journey with us</p>
+    </div>
+
+    <!-- Create Account Form Container -->
+    <div class="container">
+        <div class="glass-card">
+            <div class="card-header">
+                <h2>Create New Account</h2>
+                <div class="header-decoration"></div>
+            </div>
+            <div class="card-body">
+                <!-- Form to Create Account -->
+                <form th:action="@{/accounts/create}" method="POST">
+                    <div class="form-group">
+                        <input type="text" id="accountNumber" name="accountNumber" required 
+                               class="modern-input" placeholder=" ">
+                        <label for="accountNumber" class="input-label">Account Number</label>
+                        <span class="input-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="accountHolderName" name="accountHolderName" required
+                               class="modern-input" placeholder=" ">
+                        <label for="accountHolderName" class="input-label">Account Holder Name</label>
+                        <span class="input-border"></span>
+                    </div>
+
+                    <button type="submit" class="btn-create">
+                        <span>Create Account</span>
+                        <div class="hover-effect"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
